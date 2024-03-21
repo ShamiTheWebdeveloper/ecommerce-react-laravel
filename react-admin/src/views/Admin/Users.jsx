@@ -6,13 +6,7 @@ import routes from "../../Config/route.js";
 import DataTable from 'react-data-table-component';
 import commonRoute from "../../Config/commonRoute.js";
 import {useStateContext} from "../../Context/ContextProvider.jsx";
-<<<<<<< HEAD
 
-=======
-import userInfo from "../../Config/userInfo.js";
-// import LoginUser from "../../Config/userInfo.js";
-// import LoginUser from "../../Config/userInfo.js";
->>>>>>> 2e100552e0648bae53dd7fbfc5ad3e27483ea90f
 
 const Users = () => {
     const [users,setUsers]=useState([]);
@@ -35,17 +29,9 @@ const Users = () => {
 
 
     function deleteUser(userId) {
-<<<<<<< HEAD
         if (userId===user.id)return;
         if (!window.confirm('Really want to delete this user?')){
-=======
-        // if (userId===userInfo().id){
-        //     return;
-        // }
-
-        if (!window.confirm('Really want to delete this user?') ){
->>>>>>> 2e100552e0648bae53dd7fbfc5ad3e27483ea90f
-            return
+            return;
         }
         axiosClient.delete(routeAPI.users+commonRoute.singleSlash+userId)
             .then(()=>{
@@ -82,9 +68,6 @@ const Users = () => {
             name: 'Action',
             selector:admin=>admin.id===user.id?'You cannot Perform Action on Your self':(<div className='d-flex'>
                 <Link to={routes.users+commonRoute.singleSlash+admin.id} className='btn btn-primary' >Edit</Link>
-            selector:user=>user.id===userInfo().id?'':(<div className='d-flex'>
-                <Link to={routes.users+commonRoute.singleSlash+user.id} className='btn btn-primary' >Edit</Link>
->>>>>>> 2e100552e0648bae53dd7fbfc5ad3e27483ea90f
                 {'\u00A0'}
                 {'\u00A0'}
                 <button className='btn btn-danger' onClick={ev=>deleteUser(admin.id)}>Delete</button>
