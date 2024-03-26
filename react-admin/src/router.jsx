@@ -37,7 +37,7 @@ const router=createBrowserRouter([
             },
             {
                 path:routes.categories+commonRoute.recordId,
-                element: <ActionUsers key={routeKeys.updateCategory} />
+                element: <ActionCategory key={routeKeys.updateCategory} />
             },
             {
                 path: routes.users,
